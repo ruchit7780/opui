@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// // import Page2 from "./component2/Page2";
 
-function App() {
+// import Header from "./components/Header";
+// import Main from "./components/Main";
+// import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+// import Page2 from "./component2/Page2";
+import Layout2 from "./Layout2";
+import Layout3 from "./Layout3";
+// import Pagee3 from "./component3/Pagee3";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Layout></Layout>}></Route>
+          <Route path="/page" element={<Layout2></Layout2>}></Route>
+          <Route path="/page2" element={<Layout3></Layout3>}></Route>
+        </Routes>
+      </BrowserRouter>
+      {/* // <Page2></Page2> */}
+      {/* <Pagee3></Pagee3> */}
+    </>
   );
-}
+};
 
 export default App;
